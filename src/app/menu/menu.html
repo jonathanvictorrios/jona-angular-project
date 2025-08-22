@@ -1,7 +1,5 @@
-<section>
-  <div class="example-label">Filled</div>
-  <div class="example-button-row">
-  <a matButton="filled" routerLink="/">Home</a>
-  <a matButton="filled" routerLink="/list">Lists</a>
-  </div>
-</section>
+<button matButton="filled" [matMenuTriggerFor]="menu">Menu</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item routerLink="/">Home</button>
+  <button mat-menu-item routerLink="/users">Users</button>
+</mat-menu>
