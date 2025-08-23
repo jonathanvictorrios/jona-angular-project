@@ -49,5 +49,5 @@ const ELEMENT_DATA: UserElement[] = [
 })
 export class User {
   columnNames = ["id","first_name","last_name","dni"];
-  dataSource = ELEMENT_DATA;
+  data = ELEMENT_DATA;
 }

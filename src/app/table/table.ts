@@ -18,12 +18,15 @@ export interface PeriodicElement {
   imports: [MatTableModule,MatPaginatorModule,MatPaginator],
   standalone:true
 })
-export class Table implements AfterViewInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+export class Table{
   @Input() columnsNames: string[] = [];
-  @Input() dataSource: MatTableDataSource<UserElement> = new MatTableDataSource<UserElement>();
+  @Input() data: UserElement[] = [];
+  dataSource = new MatTableDataSource<UserElement>([]);
+  ngOnChanges(){
+    this.dataSource = new MatTableDataSource<UserElement>(this.data);
+  }
 
-  @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
