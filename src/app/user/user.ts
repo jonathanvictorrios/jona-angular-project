@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { Table } from '../table/table';
-
+import {MatCardModule} from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { RouterModule } from '@angular/router';
 export interface UserElement {
   id:number;
   first_name:string;
@@ -42,7 +46,7 @@ const ELEMENT_DATA: UserElement[] = [
 ];
 @Component({
   selector: 'app-user',
-  imports: [Table],
+  imports: [Table,MatCardModule,MatButtonModule,MatDividerModule,MatTooltipModule,RouterModule],
   templateUrl: './user.html',
   styleUrl: './user.scss'
 
